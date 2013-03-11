@@ -36,6 +36,17 @@
       }
       </script>
       <style type="text/css" media="screen">
+      #banner {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        float: left;
+        width: 592px;
+        height: 40px;
+      }
+      #banner a {
+        text-decoration: none;
+      }
       #map_canvas {
         margin-left: auto;
         margin-right: auto;
@@ -44,12 +55,33 @@
         width: 592px;
         height: 298px;
       }
+      .button{
+        border:1px solid #7d99ca; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:12px;font-family:arial, helvetica, sans-serif; padding: 5px 5px 5px 5px; text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; text-align: center; color: #FFFFFF; background-color: #a5b8da;
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a5b8da), color-stop(100%, #7089b3));
+        background-image: -webkit-linear-gradient(top, #a5b8da, #7089b3);
+        background-image: -moz-linear-gradient(top, #a5b8da, #7089b3);
+        background-image: -ms-linear-gradient(top, #a5b8da, #7089b3);
+        background-image: -o-linear-gradient(top, #a5b8da, #7089b3);
+        background-image: linear-gradient(top, #a5b8da, #7089b3);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#a5b8da, endColorstr=#7089b3);
+      }
+
+      .button:hover{
+        border:1px solid #5d7fbc; background-color: #819bcb;
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#819bcb), color-stop(100%, #536f9d));
+        background-image: -webkit-linear-gradient(top, #819bcb, #536f9d);
+        background-image: -moz-linear-gradient(top, #819bcb, #536f9d);
+        background-image: -ms-linear-gradient(top, #819bcb, #536f9d);
+        background-image: -o-linear-gradient(top, #819bcb, #536f9d);
+        background-image: linear-gradient(top, #819bcb, #536f9d);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#819bcb, endColorstr=#536f9d);
+      }
       </style>
     </head>
     <body onload="initialize()">
-      <div class="inat-widget">
-        <div id="map_canvas"></div>
+      <div id="banner">
+        <a href="http://www.inaturalist.org/observations/new?taxon_id=<%= @taxon_id %>&project_id=13" class="button" target="_top"style="margin-right:10px;float:left;">Add Observations of <i><%= @name %></i> to the <b>Global Amphibian Bioblitz</b></a>
+        <a href="http://www.inaturalist.org" target="_blank"><img src="http://www.inaturalist.org/images/inat-logo-pb.png" /></a>
       </div>
+      <div id="map_canvas"></div>
     </body>
 </html>
 

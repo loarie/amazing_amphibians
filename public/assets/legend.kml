@@ -4,7 +4,7 @@
     <ScreenOverlay id="legend">
       <name>Legend</name>
       <Icon>
-        <href>http://www.inaturalist.org/attachments/project_assets/306-legend.png?1362954580</href>
+        <href>https://amazing-amphibians.herokuapp.com/assets/legend.png</href>
       </Icon>
       <overlayXY x="0" y="0" xunits="pixels" yunits="pixels"/>
       <screenXY x="5" y="15" xunits="pixels" yunits="pixels"/>
