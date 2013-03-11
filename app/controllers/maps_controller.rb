@@ -3,6 +3,10 @@ class MapsController < ApplicationController
   require 'json'
   
   def home
+    @project_id = params[:project_id]
+    if @project_id
+      @proj = "&project_id=#{@project_id}"
+    end
     @taxon_id = params[:taxon_id]
     url = "http://www.inaturalist.org/taxa/#{@taxon_id}.json"
     result = JSON.parse(open(url).read)
