@@ -1,0 +1,55 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+      <title>Global Amphibian Blitz | Amphibian Ark</title>
+      <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+      <script type="text/javascript">
+      function initialize() {
+        var the_center = new google.maps.LatLng(18.495127,-72.611224);
+        var myOptions = {
+          zoom: 1,
+          center: the_center,
+          mapTypeId: google.maps.MapTypeId.TERRAIN
+        }
+
+        var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+        
+        var georssLayer3 = new google.maps.KmlLayer(
+          '/assets/legend.kml'
+        );
+        georssLayer3.setMap(map);
+        
+        var georssLayer2 = new google.maps.KmlLayer(
+          'http://www.inaturalist.org/taxa/<%= @taxon_id %>/range.kml'
+        );
+        georssLayer2.setMap(map);
+        
+        var georssLayer = new google.maps.KmlLayer(
+          'http://www.inaturalist.org/observations.kml?taxon_id=<%= @taxon_id %>',
+          {preserveViewport:true}
+        );
+        georssLayer.setMap(map);
+        
+      }
+      </script>
+      <style type="text/css" media="screen">
+      #map_canvas {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        float: left;
+        width: 592px;
+        height: 298px;
+      }
+      </style>
+    </head>
+    <body onload="initialize()">
+      <div class="inat-widget">
+        <div id="map_canvas"></div>
+      </div>
+    </body>
+</html>
+

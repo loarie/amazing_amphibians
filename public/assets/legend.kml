@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+  <Document>
+    <ScreenOverlay id="legend">
+      <name>Legend</name>
+      <Icon>
+        <href>http://www.inaturalist.org/attachments/project_assets/306-legend.png?1362954580</href>
+      </Icon>
+      <overlayXY x="0" y="0" xunits="pixels" yunits="pixels"/>
+      <screenXY x="5" y="15" xunits="pixels" yunits="pixels"/>
+    </ScreenOverlay>
+  </Document>
+</kml>
