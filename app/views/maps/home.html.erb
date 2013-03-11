@@ -40,7 +40,7 @@
         margin-right: auto;
         display: block;
         float: left;
-        width: 592px;
+        width: 100%;
         height: 40px;
       }
       #banner a {
@@ -51,8 +51,8 @@
         margin-right: auto;
         display: block;
         float: left;
-        width: 592px;
-        height: 298px;
+        width: 100%;
+        height: <%= @height %>px;
       }
       .button{
         border:1px solid #7d99ca; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:12px;font-family:arial, helvetica, sans-serif; padding: 5px 5px 5px 5px; text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; text-align: center; color: #FFFFFF; background-color: #a5b8da;
@@ -77,8 +77,8 @@
     </head>
     <body onload="initialize()">
       <div id="banner">
-        <a href="http://www.inaturalist.org/observations/new?taxon_id=<%= @taxon_id %><%= @proj %>" class="button" target="_top"style="margin-right:10px;float:left;">Add Observations of <i><%= @name %></i></b></a>
-        <a href="http://www.inaturalist.org" target="_blank"><img src="http://www.inaturalist.org/images/inat-logo-pb.png" /></a>
+        <a href="http://www.inaturalist.org/observations/new?taxon_id=<%= @taxon_id %><%= @proj %>" class="button" target="_top" style="margin-right:10px;float:left;">Add Observations of <i><%= @name %></i></b></a>
+        <a href="http://www.inaturalist.org" target="_blank"><img src="http://www.inaturalist.org/images/inat-logo-pb.png" style="float:right;" /></a>
       </div>
       <div id="map_canvas"></div>
     </body>

@@ -12,6 +12,11 @@ class MapsController < ApplicationController
     result = JSON.parse(open(url).read)
     @name = result["name"]
     @time = Time::now.to_i
+    if param = params[:height]
+      @height = param.to_i - 40
+    else
+      @height = 350
+    end
   end
 
 end
