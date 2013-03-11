@@ -7,6 +7,7 @@ class MapsController < ApplicationController
     url = "http://www.inaturalist.org/taxa/#{@taxon_id}.json"
     result = JSON.parse(open(url).read)
     @name = result["name"]
+    @time = Time::now.to_i
   end
 
 end
