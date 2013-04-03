@@ -15,16 +15,15 @@
 
         var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
         
+        var georssLayer = new google.maps.KmlLayer(
+          'http://www.inaturalist.org/observations.kml?taxon_id=<%= @taxon_id %>?ts=<%= @time %>'
+        );
+        georssLayer.setMap(map);
+        
         var georssLayer2 = new google.maps.KmlLayer(
           'http://www.inaturalist.org/taxa/<%= @taxon_id %>/range.kml?ts=<%= @time %>'
         );
         georssLayer2.setMap(map);
-        
-        var georssLayer = new google.maps.KmlLayer(
-          'http://www.inaturalist.org/observations.kml?taxon_id=<%= @taxon_id %>?ts=<%= @time %>',
-          {preserveViewport:true}
-        );
-        georssLayer.setMap(map);
         
         var georssLayer3 = new google.maps.KmlLayer(
           'https://amazing-amphibians.herokuapp.com/assets/legend.kml?ts=<%= @time %>',
