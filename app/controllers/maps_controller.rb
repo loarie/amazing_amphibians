@@ -11,7 +11,7 @@ class MapsController < ApplicationController
     url = "http://www.inaturalist.org/taxa/#{@taxon_id}.json"
     result = JSON.parse(open(url).read)
     @name = result["name"]
-    @time = Time::now.to_i
+    @time = (Time.now.to_i)/60/60/24
     if param = params[:height]
       @height = param.to_i - 40
     else
